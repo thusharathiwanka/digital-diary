@@ -1,4 +1,4 @@
-import Format from "../layout/format";
+import Format from "../components/layout/format";
 
 export default function Home() {
 	return (

@@ -1,7 +1,7 @@
 import Head from "next/head";
 
-import Header from "../components/common/header";
-import Footer from "../components/common/footer";
+import Header from "../common/header";
+import Footer from "../common/footer";
 
 export default function Format({ children }) {
 	return (
