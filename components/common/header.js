@@ -16,7 +16,7 @@ export default function Header() {
 				</div>
 				<div className="shrink w-80 sm:order-2">
 					<Link href="/">
-						<a className="font-bold text-3xl">Design</a>
+						<a className="font-bold text-3xl">Designer</a>
 					</Link>
 				</div>
 				<div className="w-96 order-3 flex justify-center">
