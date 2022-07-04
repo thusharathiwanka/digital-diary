@@ -1,9 +1,10 @@
 import Format from "../components/layout/format";
+import TrendingSection from "../components/home/trending-section";
 
 export default function Home() {
 	return (
 		<Format>
-			<h1>Main content</h1>
+			<TrendingSection />
 		</Format>
 	);
 }
