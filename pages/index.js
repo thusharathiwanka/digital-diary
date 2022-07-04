@@ -1,9 +1,9 @@
-import Header from "../components/header";
+import Format from "../layout/format";
 
 export default function Home() {
 	return (
-		<>
-			<Header />
-		</>
+		<Format>
+			<h1>Main content</h1>
+		</Format>
 	);
 }
