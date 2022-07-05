@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ImFacebook, ImTwitter, ImYoutube } from "react-icons/im";
+
+import Social from "./social";
 
 export default function Header() {
 	return (
@@ -19,19 +20,7 @@ export default function Header() {
 						<a className="font-bold text-3xl">Designer</a>
 					</Link>
 				</div>
-				<div className="w-96 order-3 flex justify-center">
-					<div className="flex gap-6">
-						<a href="https://facebook.com" rel="noopener noreferrer" target="_blank">
-							<ImFacebook />
-						</a>
-						<a href="https://twitter.com" rel="noopener noreferrer" target="_blank">
-							<ImTwitter />
-						</a>
-						<a href="https://youtube.com" rel="noopener noreferrer" target="_blank">
-							<ImYoutube />
-						</a>
-					</div>
-				</div>
+				<Social width />
 			</div>
 		</header>
 	);
