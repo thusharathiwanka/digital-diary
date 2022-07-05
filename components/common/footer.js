@@ -5,7 +5,7 @@ import Social from "./social";
 export default function Footer() {
 	return (
 		<footer className="bg-gray-50">
-			<div className="container mx-auto flex justify-center py-12 text-center">
+			<div className="container mx-auto flex justify-center py-12 text-center px-8">
 				<div className="py-5">
 					<h1 className="font-bold text-3xl">Subscribe to Newsletter</h1>
 					<form className="pb-10 pt-5">
@@ -14,7 +14,7 @@ export default function Footer() {
 							name="newsletter"
 							id="newsletter"
 							placeholder="Enter your Email"
-							className="w-full shadow border rounded-full text-gray-700 focus:outline-none focus:shadow-outline p-3 mb-5"
+							className="input-text-transition w-full shadow border rounded-full text-gray-700 p-3 mb-5"
 						/>
 						<button
 							type="submit"

@@ -12,12 +12,12 @@ export default function Header() {
 						name="search"
 						id="search"
 						placeholder="Search..."
-						className="input-text"
+						className="input-text input-text-transition"
 					/>
 				</div>
 				<div className="shrink w-80 order-1">
 					<Link href="/">
-						<a className="font-bold text-3xl">Designer</a>
+						<a className="font-bold text-3xl">DigitalDiary</a>
 					</Link>
 				</div>
 				<Social width />
