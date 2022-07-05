@@ -2,7 +2,7 @@ import CategoryBlogCard from "./category-blog-card";
 
 export default function CategorySection() {
 	return (
-		<section className="container mx-auto py-16 md:px-20">
+		<section className="container mx-auto py-16 md:px-20 px-8">
 			<div className="grid lg:grid-cols-2 gap-2">
 				<div className="item">
 					<h1 className="font-bold text-4xl py-10">Business</h1>
