@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import Author from "../children/author";
+
 export default function TrendingSection() {
 	return (
 		<section className="py-6">
@@ -41,7 +43,7 @@ export default function TrendingSection() {
 								unorthographic life One day however a small line of blind text by the name of Lorem
 								Ipsum decided to leave for the far World of Grammar.
 							</p>
-							<h1>Author</h1>
+							<Author />
 						</div>
 					</div>
 				</div>
