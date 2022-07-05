@@ -1,3 +1,37 @@
+import Link from "next/link";
+
+import Social from "./social";
+
 export default function Footer() {
-	return <div>footer</div>;
+	return (
+		<footer className="bg-gray-50">
+			<div className="container mx-auto flex justify-center py-12 text-center">
+				<div className="py-5">
+					<h1 className="font-bold text-3xl">Subscribe to Newsletter</h1>
+					<form className="pb-10 pt-5">
+						<input
+							type="email"
+							name="newsletter"
+							id="newsletter"
+							placeholder="Enter your Email"
+							className="w-full shadow border rounded text-gray-700 focus:outline-none focus:shadow-outline px-3 py-2 mb-5"
+						/>
+						<button
+							type="submit"
+							className="bg-orange-400 px-20 py-3 rounded-full text-gray-50 text-xl"
+						>
+							Subscribe
+						</button>
+					</form>
+					<Social width={false} />
+					<p className="py-5 text-gray-400">Copyright &copy; 2022 All rights reserved</p>
+					<Link href={"/"}>
+						<a>
+							<p className="text-gray-400">Terms & Conditions</p>
+						</a>
+					</Link>
+				</div>
+			</div>
+		</footer>
+	);
 }
