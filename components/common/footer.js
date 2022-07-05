@@ -14,7 +14,7 @@ export default function Footer() {
 							name="newsletter"
 							id="newsletter"
 							placeholder="Enter your Email"
-							className="input-text-transition w-full shadow border rounded-full text-gray-700 p-3 mb-5"
+							className="input-text-transition w-full rounded-full text-gray-700 p-3 mb-5"
 						/>
 						<button
 							type="submit"
