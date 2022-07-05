@@ -1,5 +1,6 @@
 import Format from "../components/layout/format";
 import LatestSection from "../components/home/latest-section";
+import PopularSection from "../components/home/popular-section";
 import TrendingSection from "../components/home/trending-section";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
 		<Format>
 			<TrendingSection />
 			<LatestSection />
+			<PopularSection />
 		</Format>
 	);
 }

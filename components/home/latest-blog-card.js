@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import Author from "../children/author";
 
-export default function BlogCard() {
+export default function LatestBlogCard() {
 	return (
 		<div className="item">
 			<div className="image">

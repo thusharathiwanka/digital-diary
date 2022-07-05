@@ -1,25 +1,25 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 import Author from "../children/author";
 
-export default function Slide() {
+export default function PopularBlogCard() {
 	return (
-		<div className="grid md:grid-cols-2">
+		<div className="grid">
 			<div className="image">
 				<Link href={"/"}>
 					<a>
 						<Image
 							src={"/images/img1.jpg"}
 							width={600}
-							height={600}
-							alt={"trending-blog-image"}
+							height={400}
+							alt={"latest-blog-image"}
 							className="object-cover"
 						/>
 					</a>
 				</Link>
 			</div>
-			<div className="info flex justify-center flex-col">
+			<div className="info flex justify-center flex-col py-4">
 				<div className="cat">
 					<Link href={"/"}>
 						<a className="font-semibold text-orange-600 hover:text-orange-700">Business, Travel</a>
@@ -30,7 +30,7 @@ export default function Slide() {
 				</div>
 				<div className="title">
 					<Link href={"/"}>
-						<a className="text-3xl md:text-6xl font-bold text-gray-800 hover:text-gray-600">
+						<a className="text-3xl md:text-4xl font-bold text-gray-800 hover:text-gray-600">
 							Your most unhappy customers are your greatest source of learning
 						</a>
 					</Link>
