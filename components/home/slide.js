@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Author from "../children/author";
+import Author from "../common/children/author";
+import PostInfo from "../common/children/post-info";
 
 export default function Slide() {
 	return (
@@ -20,14 +21,7 @@ export default function Slide() {
 				</Link>
 			</div>
 			<div className="info flex justify-center flex-col">
-				<div className="cat">
-					<Link href={"/"}>
-						<a className="font-semibold text-orange-600 hover:text-orange-700">Business, Travel</a>
-					</Link>
-					<Link href={"/"}>
-						<a className="font-semibold text-gray-600 hover:text-gray-700"> - Jul 04, 2022</a>
-					</Link>
-				</div>
+				<PostInfo />
 				<div className="title">
 					<Link href={"/"}>
 						<a className="text-3xl md:text-6xl font-bold text-gray-800 hover:text-gray-600">

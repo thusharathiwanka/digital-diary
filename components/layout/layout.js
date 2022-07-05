@@ -3,7 +3,7 @@ import Head from "next/head";
 import Header from "../common/header";
 import Footer from "../common/footer";
 
-export default function Format({ children }) {
+export default function Layout({ children }) {
 	return (
 		<>
 			<Head>

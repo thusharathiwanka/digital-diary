@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Author from "../children/author";
+import Author from "../common/children/author";
 
 export default function CategoryBlogCard() {
 	return (

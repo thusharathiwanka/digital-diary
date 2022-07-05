@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Social from "./social";
+import Social from "./children/social";
 
 export default function Footer() {
 	return (
