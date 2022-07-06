@@ -4,14 +4,16 @@ import Link from "next/link";
 import Author from "../common/children/author";
 import PostInfo from "../common/children/post-info";
 
-export default function Slide() {
+export default function Slide({ post }) {
+	const { title, subtitle, category, published, img, author } = post;
+
 	return (
 		<div className="grid md:grid-cols-2 gap-8 items-center">
 			<div className="image">
 				<Link href={"/"}>
 					<a>
 						<Image
-							src={"/images/img1.jpg"}
+							src={img || "/images/img1.jpg"}
 							width={600}
 							height={600}
 							alt={"trending-blog-image"}
@@ -21,20 +23,16 @@ export default function Slide() {
 				</Link>
 			</div>
 			<div className="info flex justify-center flex-col">
-				<PostInfo />
+				{category && published ? <PostInfo info={{ category, published }} /> : ""}
 				<div className="title">
 					<Link href={"/"}>
 						<a className="text-3xl md:text-6xl font-bold text-gray-800 hover:text-gray-600">
-							Your most unhappy customers are your greatest source of learning
+							{title || "Unknown"}
 						</a>
 					</Link>
 				</div>
-				<p className="text-gray-500 py-3">
-					Even the all-powerful Pointing has no control about the blind texts it is an almost
-					unorthographic life One day however a small line of blind text by the name of Lorem Ipsum
-					decided to leave for the far World of Grammar.
-				</p>
-				<Author />
+				<p className="text-gray-500 py-3">{subtitle || "Unknown"}</p>
+				{author && <Author author={author} />}
 			</div>
 		</div>
 	);
