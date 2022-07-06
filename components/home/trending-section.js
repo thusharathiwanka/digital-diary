@@ -1,5 +1,6 @@
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import Error from "../common/children/error";
 import Spinner from "../common/children/spinner";
 import Slide from "./slide";

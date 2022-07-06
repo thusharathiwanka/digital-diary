@@ -1,15 +1,24 @@
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
-
+import Error from "../common/children/error";
+import Spinner from "../common/children/spinner";
 import PopularBlogCard from "./popular-blog-card";
+
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import useFetcher from "../../hooks/useFetcher";
+
+import "swiper/css";
 
 export default function PopularSection() {
 	SwiperCore.use([Autoplay]);
 
 	const windowSize = useWindowDimensions();
+
+	const { data, isLoading, isError } = useFetcher("popular");
+
+	if (isLoading) return <Spinner />;
+	if (isError) return <Error message={"While fetching popular posts."} />;
 
 	return (
 		<section className="container mx-auto md:px-20 py-10 px-8">
@@ -21,18 +30,12 @@ export default function PopularSection() {
 				loop
 				spaceBetween={50}
 			>
-				<SwiperSlide>
-					<PopularBlogCard />
-				</SwiperSlide>
-				<SwiperSlide>
-					<PopularBlogCard />
-				</SwiperSlide>
-				<SwiperSlide>
-					<PopularBlogCard />
-				</SwiperSlide>
-				<SwiperSlide>
-					<PopularBlogCard />
-				</SwiperSlide>
+				{data &&
+					data.map(post => (
+						<SwiperSlide key={post.id}>
+							<PopularBlogCard post={post} />
+						</SwiperSlide>
+					))}
 			</Swiper>
 		</section>
 	);
