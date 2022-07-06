@@ -5,7 +5,9 @@ import Author from "../common/children/author";
 import PostInfo from "../common/children/post-info";
 
 export default function CategoryBlogCard({ post }) {
-	const { title, subtitle, category, published, img, author } = post;
+	if (!post) return null;
+
+	const { title, category, published, img, author } = post;
 
 	return (
 		<div className="flex gap-5">
