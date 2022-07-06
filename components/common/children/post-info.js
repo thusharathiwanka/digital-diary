@@ -8,9 +8,13 @@ export default function PostInfo({ info }) {
 	return (
 		<div className="cat flex">
 			<Link href={"/"}>
-				<a className="font-semibold text-orange-600 hover:text-orange-700">{category}</a>
+				<a className="font-semibold text-orange-600 hover:text-orange-700">
+					{category || "Unknown"}
+				</a>
 			</Link>
-			<p className="font-semibold text-gray-600 hover:text-gray-700">&nbsp; - {published}</p>
+			<p className="font-semibold text-gray-600 hover:text-gray-700">
+				&nbsp; - {published || "Unknown"}
+			</p>
 		</div>
 	);
 }

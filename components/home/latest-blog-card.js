@@ -13,7 +13,7 @@ export default function LatestBlogCard({ post }) {
 				<Link href={"/"}>
 					<a>
 						<Image
-							src={img}
+							src={img || "/images/img1.jpg"}
 							width={500}
 							height={350}
 							alt={"latest-blog-image"}
@@ -23,14 +23,16 @@ export default function LatestBlogCard({ post }) {
 				</Link>
 			</div>
 			<div className="info flex justify-center flex-col py-4">
-				<PostInfo info={{ category, published }} />
+				{category && published ? <PostInfo info={{ category, published }} /> : ""}
 				<div className="title">
 					<Link href={"/"}>
-						<a className="text-xl font-bold text-gray-800 hover:text-gray-600">{title}</a>
+						<a className="text-xl font-bold text-gray-800 hover:text-gray-600">
+							{title || "Unknown"}
+						</a>
 					</Link>
 				</div>
-				<p className="text-gray-500 py-3">{subtitle}</p>
-				<Author author={author} />
+				<p className="text-gray-500 py-3">{subtitle || "Unknown"}</p>
+				{author && <Author author={author} />}
 			</div>
 		</div>
 	);

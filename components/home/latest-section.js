@@ -1,10 +1,12 @@
 import LatestBlogCard from "./latest-blog-card";
+import Spinner from "../common/children/spinner";
+
 import useFetcher from "../../hooks/useFetcher";
 
 export default function LatestSection() {
 	const { data, isLoading, isError } = useFetcher("posts");
 
-	if (isLoading) return <p>Loading...</p>;
+	if (isLoading) return <Spinner />;
 	if (isError) return <p>Error!</p>;
 
 	return (
