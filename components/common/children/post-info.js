@@ -1,12 +1,16 @@
 import Link from "next/link";
 
-export default function PostInfo() {
+export default function PostInfo({ info }) {
+	if (!info) return <h1>Info</h1>;
+
+	const { category, published } = info;
+
 	return (
 		<div className="cat flex">
 			<Link href={"/"}>
-				<a className="font-semibold text-orange-600 hover:text-orange-700">Business, Travel</a>
+				<a className="font-semibold text-orange-600 hover:text-orange-700">{category}</a>
 			</Link>
-			<p className="font-semibold text-gray-600 hover:text-gray-700">&nbsp; - Jul 04, 2022</p>
+			<p className="font-semibold text-gray-600 hover:text-gray-700">&nbsp; - {published}</p>
 		</div>
 	);
 }

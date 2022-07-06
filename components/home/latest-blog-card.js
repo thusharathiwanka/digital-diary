@@ -2,15 +2,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Author from "../common/children/author";
+import PostInfo from "../common/children/post-info";
 
-export default function LatestBlogCard() {
+export default function LatestBlogCard({ post }) {
+	const { title, subtitle, category, published, img, author } = post;
+
 	return (
 		<div className="item">
 			<div className="image">
 				<Link href={"/"}>
 					<a>
 						<Image
-							src={"/images/img1.jpg"}
+							src={img}
 							width={500}
 							height={350}
 							alt={"latest-blog-image"}
@@ -20,27 +23,14 @@ export default function LatestBlogCard() {
 				</Link>
 			</div>
 			<div className="info flex justify-center flex-col py-4">
-				<div className="cat">
-					<Link href={"/"}>
-						<a className="font-semibold text-orange-600 hover:text-orange-700">Business, Travel</a>
-					</Link>
-					<Link href={"/"}>
-						<a className="font-semibold text-gray-600 hover:text-gray-700"> - Jul 04, 2022</a>
-					</Link>
-				</div>
+				<PostInfo info={{ category, published }} />
 				<div className="title">
 					<Link href={"/"}>
-						<a className="text-xl font-bold text-gray-800 hover:text-gray-600">
-							Your most unhappy customers are your greatest source of learning
-						</a>
+						<a className="text-xl font-bold text-gray-800 hover:text-gray-600">{title}</a>
 					</Link>
 				</div>
-				<p className="text-gray-500 py-3">
-					Even the all-powerful Pointing has no control about the blind texts it is an almost
-					unorthographic life One day however a small line of blind text by the name of Lorem Ipsum
-					decided to leave for the far World of Grammar.
-				</p>
-				<Author />
+				<p className="text-gray-500 py-3">{subtitle}</p>
+				<Author author={author} />
 			</div>
 		</div>
 	);
