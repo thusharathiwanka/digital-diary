@@ -7,12 +7,12 @@ import PostInfo from "../common/children/post-info";
 export default function CategoryBlogCard({ post }) {
 	if (!post) return null;
 
-	const { title, category, published, img, author } = post;
+	const { id, title, category, published, img, author } = post;
 
 	return (
 		<div className="flex gap-5">
 			<div className="image flex flex-col justify-start">
-				<Link href={"/"}>
+				<Link href={`/posts/${id}`}>
 					<a>
 						<Image
 							src={img || "/images/img1.jpg"}
@@ -27,7 +27,7 @@ export default function CategoryBlogCard({ post }) {
 			<div className="info flex justify-center flex-col">
 				{category && published ? <PostInfo info={{ category, published }} /> : ""}
 				<div className="title">
-					<Link href={"/"}>
+					<Link href={`/posts/${id}`}>
 						<a className="text-xl font-bold text-gray-800 hover:text-gray-600">
 							{title || "Unknown"}
 						</a>

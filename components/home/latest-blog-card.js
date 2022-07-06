@@ -5,12 +5,12 @@ import Author from "../common/children/author";
 import PostInfo from "../common/children/post-info";
 
 export default function LatestBlogCard({ post }) {
-	const { title, subtitle, category, published, img, author } = post;
+	const { id, title, subtitle, category, published, img, author } = post;
 
 	return (
 		<div className="item">
 			<div className="image">
-				<Link href={"/"}>
+				<Link href={`/posts/${id}`}>
 					<a>
 						<Image
 							src={img || "/images/img1.jpg"}
@@ -25,7 +25,7 @@ export default function LatestBlogCard({ post }) {
 			<div className="info flex justify-center flex-col py-4">
 				{category && published ? <PostInfo info={{ category, published }} /> : ""}
 				<div className="title">
-					<Link href={"/"}>
+					<Link href={`/posts/${id}`}>
 						<a className="text-xl font-bold text-gray-800 hover:text-gray-600">
 							{title || "Unknown"}
 						</a>
